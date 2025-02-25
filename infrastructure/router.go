@@ -13,5 +13,4 @@ func Routes(engine *gin.Engine) {
 	{
 		routes.POST("process", handlers.PullRequestEvent)
 	}
-
 }
