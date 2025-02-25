@@ -11,7 +11,7 @@ import (
 func PullRequestEvent(ctx *gin.Context) {
 	eventType := ctx.GetHeader("X-GitHub-Event")
 
-	log.Printf("Webhook recibido: \nEvento=%s", eventType)
+	log.Printf("WEB-HOOK REALIZADO CORRECTAMENTE: \nMETODO-EVENTO=%s", eventType)
 
 	payload, err := ctx.GetRawData()
 	if err != nil {
@@ -26,7 +26,7 @@ func PullRequestEvent(ctx *gin.Context) {
 	case "pull_request":
 		statusCode = application.ProcessPullRequest(payload)
 	case "push":
-		statusCode = application.ProcessPush(payload)  // Manejo de eventos push
+		statusCode = application.ProcessPush(payload) // Manejo de eventos push
 	default:
 		log.Printf("Evento no manejado: %s", eventType)
 		ctx.JSON(http.StatusNotImplemented, gin.H{"status": "Evento no manejado"})
@@ -35,4 +35,3 @@ func PullRequestEvent(ctx *gin.Context) {
 
 	ctx.JSON(statusCode, gin.H{"status": "Evento procesado"})
 }
-

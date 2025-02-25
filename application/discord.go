@@ -17,7 +17,6 @@ type DiscordMessage struct {
 func SendDiscordMessage(message string) {
 	godotenv.Load()
 	webhookURL := os.Getenv("DISCORD_wH_URL")
-
 	if webhookURL == "" {
 		log.Println("⚠️ No se encontró la URL del webhook de Discord en .env")
 		return
