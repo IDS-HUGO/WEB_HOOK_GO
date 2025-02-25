@@ -37,7 +37,7 @@ func SendDiscordMessage(message string) {
 }
 
 func ProcessPush(payload []byte) int {
-	webhookURL := os.Getenv("DISCORD_wH_URL")
+	webhookURL := os.Getenv("DISCORD_URL")
 
 	if webhookURL == "" {
 		log.Println("Error: Webhook de Discord no configurado en .env")
