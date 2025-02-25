@@ -11,7 +11,9 @@ import (
 func main() {
 
 	godotenv.Load()
+
 	router := gin.Default()
+
 	infrastructure.Routes(router)
 
 	port := os.Getenv("PORT")
