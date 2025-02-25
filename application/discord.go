@@ -17,9 +17,12 @@ type DiscordMessage struct {
 func SendDiscordMessage(message string) {
 	godotenv.Load()
 	webhookURL := os.Getenv("DISCORD_wH_URL")
+
 	if webhookURL == "" {
 		log.Println("URL DEL WEBHOOK DE DISCORD NO CONFIGURADA")
+
 		return
+
 	}
 
 	payload := DiscordMessage{Content: message}
