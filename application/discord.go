@@ -40,7 +40,7 @@ func ProcessPush(payload []byte) int {
 	webhookURL := os.Getenv("DISCORD_URL")
 
 	if webhookURL == "" {
-		log.Println("Error: Webhook de Discord no configurado en .env")
+		log.Println("ERROR: URL DEL WEBHOOK DE DISCORD NO CONFIGURADA")
 		return 500
 	}
 
