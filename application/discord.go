@@ -17,6 +17,7 @@ type DiscordMessage struct {
 func SendDiscordMessage(message string) {
 	godotenv.Load()
 	webhookURL := os.Getenv("DISCORD_wH_URL")
+
 	if webhookURL == "" {
 		log.Println("⚠️ No se encontró la URL del webhook de Discord en .env")
 		return
@@ -29,6 +30,7 @@ func SendDiscordMessage(message string) {
 	if err != nil {
 		log.Println("Error al enviar mensaje a Discord:", err)
 	}
+
 }
 
 func ProcessPush(payload []byte) int {
@@ -72,9 +74,3 @@ func sendDiscordMessage(url, message string) int {
 	log.Println("Mensaje enviado a Discord con estado:", resp.StatusCode)
 	return resp.StatusCode
 }
-
-//pureba de wenhook
-//pureba de wenhook 2
-//pureba de wenhook 3
-//pureba de wenhook 4
-//pureba de wenhook 5 para pull request

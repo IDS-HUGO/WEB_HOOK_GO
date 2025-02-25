@@ -20,11 +20,11 @@ func ProcessPullRequest(payload []byte) int {
 		pRID := eventPayload.PullRequest.ID
 
 		log.Printf("Pull Request Recibido:\nID:%d\nBase:%s\nHead:%s\nUser:%s", pRID, base, branch, user)
+
 	} else {
 		log.Printf("Pull Request Action no es Closed: %s", eventPayload.Action)
-	}
 
-	
+	}
 
 	return 200
 }
